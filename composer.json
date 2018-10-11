@@ -1,0 +1,12 @@
+{
+    "name": "naiba/rc-pay",
+    "authors": [
+        {
+            "name": "Naiba",
+            "email": "1@5.nu"
+        }
+    ],
+    "require": {
+        "yansongda/pay": "^2.5"
+    }
+}
