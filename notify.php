@@ -36,5 +36,10 @@ try {
         throw new Exception($output, 1);
     }
 } catch (Exception $e) {
-    echo($e->getMessage());
+    Yansongda\Pay\Log::debug('Resellerclub Push Fail', array(
+        'transID' => $transId,
+        'qrID'=>$data->trade_no,
+        'output'=>$e->getMessage(),
+    ));
+    echo("fail");
 }
