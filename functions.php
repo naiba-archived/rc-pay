@@ -1,15 +1,15 @@
 <?php
 require("vendor/autoload.php");
 
-define("SELF_URL","https://pay.idc.ee");
+define("SELF_URL", "https://pay.idc.ee");
 
 $config = [
     'app_id' => 'idc',
     'notify_url' => SELF_URL.'/notify.php',
     'return_url' => SELF_URL.'/postpayment.php',
-    'ali_public_key' => 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAt7QbTvE8HikeED5ouSqTAQk/wC/2ktNHbgRXozrK07ATC26VJCYTNn/xh7/qtC1L3qSMlDbDL8f4xeF/Eb4Wn8mbfhTt7oaYoX8wqrhzH0Sfi+SKRx/oPbD1ypbjwybj3Pby2Wgg1XcVJX31YMr5DQ0z493kmqdm8QDOoGYwfH9Zn+pRKB1CSSBcG/BgwELxQ+JdsC6BrUzRCgnU4fO78z0U3LxdfQy8+s/+1MTq/7Q7oZQaOEdt6AeAApfN7RXCeRduV7fTXNgWhxDyQvK/9edjeyYjSQXihZrOeduUNBBm87Ly/zg2GPCOQsMpak35sWvVxzG/JOSrQc67h6gSMwIDAQAB',
+    'ali_public_key' => 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA35sHnXePptrpwOwkRL/zH2HXTXXLAmZ7bW/8UEszg9Gc8GasxuJywIHRyTqKCqf1FkHXpbBKNn9jnfviYLI8QsfLrC5zm51WpBSu5tHutLquSb0EoeClCJgj/qyVVwPV0NySlBkJiwWlcfvh67o80smCQ8iwz7srABRqIxsLD0zsEBoGh48goQYLW08Iw5RTdYutv9YAuJWuarJaeZRh92HlVIc2hzve7UQMTHcVI3UR2M10OrU32akWUoKVk7rPlfTOxhAG4YnQk4t/PtMLS9zGWkJyQOWmAC9bUVdGu/UjcZ9/jn2yiN+LshUis5NJkSuu9ybcd9oNQwgEzj6OvwIDAQAB',
     // 加密方式： **RSA2**
-    'private_key' => 'MIIEpQIBAAKCAQEAtcUE2UuViOHW5CG55wK5CFDRrJXaumUoIfEvVBVuNEv03vQci4JQbeRpgsUIm9xraAuglEREcMuzBHfFtuz1pl8wYsMZtqUDl9zFI9y06hhK5ZB9aQikf3Ep/aqgMwbBPJZss/nIEWPrEsts5IN3MWnvXsbMQUgIDUlnulP34H3P9e+PkzMK6hvUj+0uXAM/EC9L4rjVVRBD3FMucUjze7FW29FGI/8oMxeyrulV47u/5u/Gt6X0fCmdR/XeTThbutog0vLa3mWApPqAqJpr5HOkUGDCdCTi6wjdz4zvmdxKVeYEPShbJKKrdXOZGoJL76HSa7FwYc+Y6IdhlZIkdwIDAQABAoIBAQCyUypxn8SBOMbgovHF4Bb1QIyjm5StfuZDfmGnRSsL5WTDgouqllsfpJGauIC8oB9DQPz12I+odT8YaASxdIF/Ci3nBm7oj7UZvH4vs6xNaS25T+qpK9BuMvA2K7nktYDIVu8oFiogXX1Wv/oBqbQ65ynuOmxSsz8rAdPgqdYqBrt7s7rUDjKyD+BEGCE8oYXf1A1Wsm91MKkFv86ndBr+fRWFtBbSKpdahN7uklGz72+LFIYxfvuWrp7pfTk6C52KkXNtgslKMbGwQrVpdTFaecsctSLYOtoBRvWj9o+6CdA9PcDumK38tl1Vbg28DHLlSRODlHc7TzUwlLs0MKT5AoGBAOlEIG2tujgLZnJAWrmYm2ZOzccTSHFpCevQc6nPkc/l0RydmeyVtC7NiDUoCsmY9sg1e1F5AqCusY+4wXWWo3ILvpoSvq4K7x1G0/l81tL+6C+K45xS/qdZmPvUVCDqjeWc4MxB2sXrUIl89gBnF1l4o6tv5ukvdtcfIOWgcBl1AoGBAMd8FHVvqK4cQCWolIqKNdLA726W+OJxvGlvw+5/qUwJYAzffYpKSOG7vQbR+mYHBWiaSRKnsGcaXZzKbmII8E8n0rjS+vvHuYDWDFqdm9+EN38tbsjyD0L6OeZflyhfe+cOyPvPQna9JdUsaOUvFDsmnYnVUxNR1vwyxV0ds9y7AoGBAN4/G4qEMF1/dx8583bLUJw8TtDyrV3ojxxPYjQTYUCsHP1fpy0DQUYqazECMqz7AX2lfxYT7o37g4+En0YSvS1GxVX0sBoQrtu9BO+6os8rMTtC4DOr25bExf6BwZoPAB0ZyBC0WeWimvwzxAqELnn/eCk6F85qe5bgwK4nm0aVAoGBAIex26jWv4NQLEJxnjlvMpWeMECl6b7/Zw7BvCHsLRlP90pKbHc5eMI0lqyhAReOBxvUd4h9EP3RbYROHzAIrI7ro+edfKTwgzskX1r0gydUJPwZx5ZhMgh5dhFDTOtlqD7QS98eaTOkDqwnfWMI11Y1OkycE9q8fOUpFB/3KHYpAoGASS/oojFE1+nh+8RXkYNbmjxcxN6nvXJaUH/6AkxiRHYFO5jS2FBaSwKWhSNrvqrNG/gPUpUKM9LWJHP5Jk8Df3Xk7j+MVFIkqX+gA9P5TDNUzi48y5O6LUfnppVHo+E+spacQ6evwBQNYBqvLQMfxSofXsFXRhXHQ3dt5ZeHhjw=',
+    'private_key' => 'MIIEpAIBAAKCAQEAyAlWCnQ7PuAv9JNBWHWzv+O2OAPqtSle3pbMJNY1ql2/GHN5vkMS0oVqxh3gmfqAKYl5X3y1QnC7rJrhIONtuYiqtTOCdefdBIh2OGrVFOB9B+EkAyhiRab6fmsUMnplOBDS6nZduqeFfa3r2BM8s5OaC0gUcxZkQbfWKRnvvKTsXOZtzgfqz8DmXXc1jdkN4VlnrYV90MLKvfaWPE2T14/Xcil0TiRboO1IP9/5yya1bq0lYfihAvld0p/M4lp+xaRcdBaLYEiHyXoBKOrqcwBzLn7ie5J6Yi2bMOnK0f9XnyJUc0bdKEgoieCHtIn8CzasKyJyN6zfMnQIPfZJTQIDAQABAoIBAQCAqMCWaLvSbQ9rF2toIgxC14tT6/ECJGHIeOVErCJIOZO3fk5HeYyZqwZJ9t2HK/9SuAFA0U0kNq3/Dn7OUHk6ZBSoB0FZ5I/bYonnL49tphXFA6HOBiNu+T8UIHsVHHQN44RFGWyfqS/K7hpLF9RrC/yAVRQSEczaGAu+09fGVIj1XueCbXqeoaqPbkrM3//zJ/mb/DnJ3DygbPBu7E4FPCLdTjAnGdONYredfcdWzLhHf3P2WiySnl18+o5ETFOkzD0X6xrFtpLKPboMvIFLC/CF7YEsbffsGZoNCk0/GRWOOpknwM7cdxNnxQP52F34XhBH/EcF4ASxDAdj1DMBAoGBAPheRwkjBdk3zctaUwmwmjCwm5ilbs5yOwyK3XnCTJI2Pn/yk5zDX8RdevOsn+2hGZCLXucImmIqEjwd7RvczL1TEThdU/UE5gKyOTo/3P7WOYyC9bYNnCIEDh9CQhBgyncbIoqR1bOVjzXWlMAPA1T1mvkxDK/PRGmDDjkKbdzZAoGBAM4u3pL2YiQtU2VXoJYzLWRvUhzwiZrHx5gg3mn/Gdo3rbQLzF73yHYuXuoGUV0IQmZnp90kRl85nrBucTnxtwFtt4U8XVFPqtyKco05R1xulqInAUilc+nrQZpOiaO+d/I0gu0XXFPPnQMIRT8gbCA0fARe0ydnu9FcT6bHT1eVAoGAIJ5JGAMYfomcpmtLYodmCKT5GlgHsGdCKAiIw7fn1H/5P1Z9WmYySpi4UA5Ixq2UrO4Q3ai8lc3OrUSE4lbiMK8bINro7tHg31PGvkaq4HEEB9cfK/Snn7QGosZR5NLBZFkU9Tvn4/jtYPW4fWy7VEoZO0bc0q4W3wCOOqGLAikCgYAsx+07ihvCs717M08DkFX5jFwPQQcCAQYOuoTUDL32sUUe57kZn0OAt42R0pF1XUfeqgDBfRFzuTYIJ9Sbuy3+N3A2lefGs0Du6Xr7xUcEglhhG4uh1Z2ZXqk+9HPcho/SoSkWiY5Z/auibvdrQIV7cSrGYDoIQvV+AUijdoJ7CQKBgQDRjTgGbscWjXebvEW5LqOvFS7ztTQYDvXyJ0JJHghsHQvyDvW1V6xmMCgrV3ZvwINsU9Lqd2cn/bP7sJrZ9N004npgvd/KIUSQv494JKRqccEqH+LSKEj9jOxD9UvrNUD+xzwPIc66/mjSJsFJH7z21VadT76+PNsV/iQNqUs8tQ==',
     'log' => [ // optional
         'file' => 'alipay.log',
         'level' => 'debug', // 建议生产环境等级调整为 info，开发环境为 debug
@@ -24,7 +24,7 @@ $config = [
     'mode' => 'dev', // optional,设置此参数，将进入沙箱模式
 ];
 $key = "O1QXZIoCzlddEj330QSF9VJVUbQemhYm"; //replace ur 32 bit secure key , Get your secure key from your Reseller Control panel
-$redirectUrl = "https://zhanshen.china.myorderbox.com/servlet/CustomPaymentAuthCompletedServlet";  // redirectUrl received from foundation
+$redirectUrl = "https://xiongshi.china.myorderbox.com/servlet/CustomPaymentAuthCompletedServlet";  // redirectUrl received from foundation
 $logger = Yansongda\Pay\Log::createLogger(
     $config['log']['file'],
     'alipay.log',
