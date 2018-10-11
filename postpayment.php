@@ -4,7 +4,7 @@
 <html>
 <head><title>正在跳转</title></head>
 <body>
-<?php        
+<?php
         srand((double)microtime()*1000000);
         $rkey = rand();
         
@@ -20,20 +20,19 @@
         $status = $data->total_amount == $accountingCurrencyAmount?"Y":"N";
         $checksum =generateChecksum($transId, $sellingCurrencyAmount, $accountingCurrencyAmount, $status, $rkey, $key);
 ?>
-		<form name="f1" action="<?php echo $redirectUrl;?>" method="post">
-			<input type="hidden" name="transid" value="<?php echo $transId;?>">
-		    <input type="hidden" name="status" value="<?php echo $status;?>">
-			<input type="hidden" name="rkey" value="<?php echo $rkey;?>">
-		    <input type="hidden" name="checksum" value="<?php echo $checksum;?>">
-		    <input type="hidden" name="sellingamount" value="<?php echo $sellingCurrencyAmount;?>">
-			<input type="hidden" name="accountingamount" value="<?php echo $accountingCurrencyAmount;?>">
-
-			<input type="submit" value="点击继续"><BR>
-		</form>
-		<script type="text/javascript">
-    		window.onload=function(){
-        	//   document.forms["f1"].submit();
-   		 }
+<form name="f1" action="<?php echo $redirectUrl;?>" method="post">
+	<input type="hidden" name="transid" value="<?php echo $transId;?>">
+	<input type="hidden" name="status" value="<?php echo $status;?>">
+	<input type="hidden" name="rkey" value="<?php echo $rkey;?>">
+	<input type="hidden" name="checksum" value="<?php echo $checksum;?>">
+	<input type="hidden" name="sellingamount" value="<?php echo $sellingCurrencyAmount;?>">
+	<input type="hidden" name="accountingamount" value="<?php echo $accountingCurrencyAmount;?>">
+	<input type="submit" value="点击继续"><BR>
+</form>
+<script type="text/javascript">
+	window.onload=function(){
+		document.forms["f1"].submit();
+	}
 </script>
 </body>
 </html>
